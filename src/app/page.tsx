@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function Home() {
   const links = [
-    { href: "http://explorer.coco-node.com", title: "Explorer", description: "" },
+    { href: "http://https://explorer.capheusnode.com/", title: "Explorer", description: "" },
     { href: "http://www.coco-node.com/", title: "Services", description: "" },
     { href: "http://www.coco-node.com/", title: "Introductions", description: "" },
   ];
@@ -15,13 +15,13 @@ export default function Home() {
     <Flex fillWidth paddingTop="l" paddingX="l" direction="column" alignItems="center" flex={1}>
       {/* Sosyal medya butonları */}
       <Flex as="header" fillWidth justifyContent="flex-end" paddingX="l" paddingY="s" gap="12">
-        <Button href="https://github.com/nikolorenzoo" prefixIcon="github" size="l" variant="tertiary">
+        <Button href="https://github.com/Capheus11" prefixIcon="github" size="l" variant="tertiary">
           GitHub
         </Button>
-        <Button href="https://x.com/Coskungurcayy" prefixIcon="twitter" size="l" variant="tertiary">
+        <Button href="https://x.com/OzzyyDebreli" prefixIcon="twitter" size="l" variant="tertiary">
           Twitter
         </Button>
-        <Button href="https://www.t.me/nikolorenzo" prefixIcon="telegram" size="l" variant="tertiary">
+        <Button href="https://t.me/c/2355073106/9070" prefixIcon="telegram" size="l" variant="tertiary">
           Telegram
         </Button>
       </Flex>
