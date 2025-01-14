@@ -7,8 +7,8 @@ import Link from 'next/link';
 export default function Home() {
   const links = [
     { href: "http://https://explorer.capheusnode.com/", title: "Explorer", description: "" },
-    { href: "http://www.coco-node.com/", title: "Services", description: "" },
-    { href: "http://www.coco-node.com/", title: "Introductions", description: "" },
+    { href: "http://www.capheusnode.com/", title: "Services", description: "" },
+    { href: "http://www.capheusnode.com/", title: "Introductions", description: "" },
   ];
 
   return (
