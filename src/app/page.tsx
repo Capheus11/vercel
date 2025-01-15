@@ -1,15 +1,35 @@
 "use client";
 
-import React from 'react';
-import { Heading, Text, Flex, Button, Grid, Icon, LetterFx } from '@/once-ui/components';
-import Link from 'next/link';
+import React, { useState, useEffect } from "react";
+import { Heading, Text, Flex, Button, Grid, Icon } from "@/once-ui/components";
+import Link from "next/link";
+import Validators from "../components/Validators";
 
 export default function Home() {
   const links = [
-    { href: "http://https://explorer.capheusnode.com/", title: "Explorer", description: "" },
+    { href: "http://explorer.capheusnode.com/", title: "Explorer", description: "" },
     { href: "http://www.capheusnode.com/", title: "Services", description: "" },
     { href: "http://www.capheusnode.com/", title: "Introductions", description: "" },
   ];
+
+  const fullText =
+    "Blockchain technology is reshaping financial systems while offering a vision of independence empowered by digital innovation. As a professional validator in this sector, I take pride in ensuring the reliability of networks and contributing to the growth of the ecosystem.";
+  const [displayText, setDisplayText] = useState("");
+
+  useEffect(() => {
+    let index = 0;
+
+    const interval = setInterval(() => {
+      if (index < fullText.length) {
+        setDisplayText(fullText.substring(0, index + 1));
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 30);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Flex
@@ -20,11 +40,10 @@ export default function Home() {
       alignItems="center"
       flex={1}
       style={{
-        backgroundImage: `url('/ozymatrix.jpeg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-        minHeight: '100vh'
+        background: "url(/background.jpg)",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
       }}
     >
       {/* Sosyal medya butonları */}
@@ -41,59 +60,105 @@ export default function Home() {
       </Flex>
 
       {/* Ana içerik */}
-      <Flex as="section" fillWidth maxWidth={68} direction="column" alignItems="center" flex={1}>
-        <Flex as="main" direction="column" justifyContent="center" fillWidth fillHeight padding="l" gap="l">
-          <Flex mobileDirection="column" fillWidth gap="24" alignItems="center">
-            <Flex position="relative" flex={2} paddingTop="56" paddingX="xl" alignItems="center" justifyContent="center">
-              <img
-                src="/coconode.png"
-                alt="My Logo"
-                style={{ width: '400px', height: 'auto' }}
-              />
-            </Flex>
+      <Flex
+        as="section"
+        fillWidth
+        maxWidth={68}
+        direction="row"
+        alignItems="center"
+        flex={1}
+        gap="24"
+        style={{ position: "relative", marginTop: "30px" }}
+      >
+        {/* Logo */}
+        <Flex
+          flex={1}
+          alignItems="center"
+          justifyContent="center"
+          style={{
+            position: "absolute",
+            top: "10%",
+            left: "7%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          <img
+            src="/coconode.png"
+            alt="My Logo"
+            style={{
+              width: "300px",
+              height: "auto",
+            }}
+          />
+        </Flex>
 
-            <Flex position="relative" flex={4} gap="24" marginBottom="104" direction="column" alignItems="center">
-              <Heading wrap="balance" variant="display-strong-xs" style={{ textAlign: 'center', fontFamily: 'monospace' }}>
-                <div style={{ marginTop: '150px' }}>
-                  <LetterFx trigger="instant">
-                    The crypto world is an ecosystem that combines financial freedom and digital innovation with decentralization.
-                  </LetterFx>
-                </div>
-              </Heading>
-            </Flex>
-          </Flex>
-
-          <Grid
-            radius="l"
-            border="neutral-medium"
-            borderStyle="solid-1"
-            columns="repeat(3, 1fr)"
-            tabletColumns="1col"
-            mobileColumns="1col"
-            fillWidth
+        {/* Yazı */}
+        <Flex
+          flex={1}
+          alignItems="flex-start" // Yazının üst kısmını sabitlemek
+          justifyContent="flex-start" // Yazının sol kısmını sabitlemek
+          style={{
+            marginLeft: "25%",
+            textAlign: "left",
+            height: "120px", // Yazının kapladığı alanı sabitlemek için
+          }}
+        >
+          <Heading
+            wrap="balance"
+            variant="display-strong-xs"
+            style={{
+              fontFamily: "monospace",
+              color: "#FFFFFF",
+              fontSize: "1.5rem",
+              lineHeight: "2rem",
+            }}
           >
-            {links.map((link) => (
-              <Link target="_blank" style={{ padding: 'var(--responsive-space-l)' }} key={link.href} href={link.href}>
-                <Flex fillWidth paddingY="8" gap="8" direction="column">
-                  <Flex fillWidth gap="12" alignItems="center">
-                    <Text variant="body-strong-m" onBackground="neutral-strong">
-                      {link.title}
-                    </Text>
-                    <Icon size="s" name="arrowUpRight" />
-                  </Flex>
-                  {link.description && (
-                    <Text variant="body-default-s" onBackground="neutral-weak">
-                      {link.description}
-                    </Text>
-                  )}
-                </Flex>
-              </Link>
-            ))}
-          </Grid>
+            {displayText}
+          </Heading>
         </Flex>
       </Flex>
 
-      <Flex as="footer" fillWidth paddingX="l" paddingY="m" justifyContent="space-between"></Flex>
+      {/* Validators bileşenini ekleme */}
+      <Flex fillWidth direction="column" alignItems="center" style={{ marginTop: "40px", padding: "20px" }}>
+        <Validators />
+      </Flex>
+
+      <Flex
+        as="footer"
+        fillWidth
+        paddingX="l"
+        paddingY="m"
+        justifyContent="space-between"
+        style={{ marginTop: "24px" }}
+      >
+        <Grid
+          radius="l"
+          border="neutral-medium"
+          borderStyle="solid-1"
+          columns="repeat(3, 1fr)"
+          tabletColumns="1col"
+          mobileColumns="1col"
+          fillWidth
+        >
+          {links.map((link) => (
+            <Link target="_blank" style={{ padding: "var(--responsive-space-l)" }} key={link.href} href={link.href}>
+              <Flex fillWidth paddingY="8" gap="8" direction="column">
+                <Flex fillWidth gap="12" alignItems="center">
+                  <Text variant="body-strong-m" onBackground="neutral-strong">
+                    {link.title}
+                  </Text>
+                  <Icon size="s" name="arrowUpRight" />
+                </Flex>
+                {link.description && (
+                  <Text variant="body-default-s" onBackground="neutral-weak">
+                    {link.description}
+                  </Text>
+                )}
+              </Flex>
+            </Link>
+          ))}
+        </Grid>
+      </Flex>
     </Flex>
   );
 }
