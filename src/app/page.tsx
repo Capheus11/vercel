@@ -20,7 +20,7 @@ export default function Home() {
       alignItems="center"
       flex={1}
       style={{
-        backgroundImage: `url('/capheus.jpeg')`,
+        backgroundImage: `url('/ozymatrix.jpeg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
