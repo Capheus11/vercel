@@ -12,7 +12,21 @@ export default function Home() {
   ];
 
   return (
-    <Flex fillWidth paddingTop="l" paddingX="l" direction="column" alignItems="center" flex={1}>
+    <Flex
+      fillWidth
+      paddingTop="l"
+      paddingX="l"
+      direction="column"
+      alignItems="center"
+      flex={1}
+      style={{
+        backgroundImage: `url('/capheus.jpeg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        minHeight: '100vh'
+      }}
+    >
       {/* Sosyal medya butonları */}
       <Flex as="header" fillWidth justifyContent="flex-end" paddingX="l" paddingY="s" gap="12">
         <Button href="https://github.com/Capheus11" prefixIcon="github" size="l" variant="tertiary">
