@@ -12,7 +12,20 @@ export default function Home() {
   ];
 
   return (
-    <Flex fillWidth paddingTop="l" paddingX="l" direction="column" alignItems="center" flex={1}>
+    <Flex
+      fillWidth
+      paddingTop="l"
+      paddingX="l"
+      direction="column"
+      alignItems="center"
+      flex={1}
+      style={{
+        backgroundImage: "url('/arka-plan.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
       {/* Sosyal medya butonları */}
       <Flex as="header" fillWidth justifyContent="flex-end" paddingX="l" paddingY="s" gap="12">
         <Button href="https://github.com/Capheus11" prefixIcon="github" size="l" variant="tertiary">
@@ -42,7 +55,7 @@ export default function Home() {
               <Heading wrap="balance" variant="display-strong-xs" style={{ textAlign: 'center', fontFamily: 'monospace' }}>
                 <div style={{ marginTop: '150px' }}>
                   <LetterFx trigger="instant">
-                    The crypto world is an ecosystem that combines financial freedom and digital innovation with decentralization.
+                    Blockchain technology combines decentralization with financial freedom and digital innovation, and I take pride in ensuring network reliability and contributing to the growth of the ecosystem.
                   </LetterFx>
                 </div>
               </Heading>
