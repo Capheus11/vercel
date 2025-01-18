@@ -34,7 +34,7 @@ export default function Home() {
         <Button href="https://x.com/OzzyyDebreli" prefixIcon="twitter" size="l" variant="tertiary">
           Twitter
         </Button>
-        <Button href="https://t.me/OzyNode" prefixIcon="telegram" size="l" variant="tertiary">
+        <Button href="https://www.t.me/OzyNode" prefixIcon="telegram" size="l" variant="tertiary">
           Telegram
         </Button>
       </Flex>
