@@ -3,7 +3,7 @@
 import React from 'react';
 import { Heading, Text, Flex, Button, Grid, Icon, LetterFx } from '@/once-ui/components';
 import Link from 'next/link';
-import Head from 'next/head'; // Head bileşenini içe aktardık.
+import Head from 'next/head'; // We imported the Head component.
 
 export default function Home() {
   const links = [
@@ -16,8 +16,8 @@ export default function Home() {
     <>
       {/* Head Bileşeni */}
       <Head>
-        <title>OzyNode</title> {/* Sekme başlığını burada belirledik */}
-        <meta name="description" content="OzyNode platformu ile tanışın!" />
+        <title>Ozynode</title> {/* We set the tab title here */}
+        <meta name="description" content="Ozynode Meet the platform!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
