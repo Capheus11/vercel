@@ -17,7 +17,8 @@ export default function Home() {
       {/* Head Bileşeni */}
       <Head>
         <title>Ozynode</title> {/* Sekme başlığını burada belirledik */}
-        <meta name="description" content="Ozynode uygulaması ile tanışın!" />
+        <meta name="description" content="Ozynode platformu ile tanışın!" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Flex
